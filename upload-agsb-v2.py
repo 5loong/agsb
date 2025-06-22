@@ -918,6 +918,7 @@ def main():
 if __name__ == "__main__":
     script_name = os.path.basename(__file__)
     if len(sys.argv) == 1: # 如果只运行脚本名，没有其他参数
+        print("+++++++")
         # 检查是否已安装，如果已安装且在运行，显示status，否则进行安装
         if INSTALL_DIR.exists() and CONFIG_FILE.exists() and SB_PID_FILE.exists() and ARGO_PID_FILE.exists():
             print(f"\033[33m检测到 ArgoSB 可能已安装。显示当前状态。\033[0m")
@@ -930,4 +931,5 @@ if __name__ == "__main__":
             args = parse_args() # 解析空参数，会得到默认的 "install" action
             install(args) # 调用安装函数
     else:
+        print("-------")
         main()
